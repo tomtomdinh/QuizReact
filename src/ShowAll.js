@@ -54,7 +54,7 @@ class ShowAll extends Component {
     this.setState({
       short: !this.state.short
     });
-    console.log(this.state);
+    console.log(this.state.short);
   }
 
   render() {
