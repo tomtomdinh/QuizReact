@@ -70,7 +70,6 @@ class ShowAll extends Component {
     // to update the state.short.
     return <div>
       <h2>All Questions</h2>
-      <p>Short or long list of Qs.</p>
       <label>
         <input type="checkbox" checked={this.state.short} onChange={this.changeForm.bind(this)}/>
         Short form

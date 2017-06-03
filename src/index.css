@@ -1,5 +1,29 @@
 body {
-  margin: 2em;
-  padding: 2;
   font-family: sans-serif;
+  background: #EDE7F6;
+}
+
+button {
+  margin: 10px;
+}
+
+input {
+  margin: 5px;
+}
+
+input[type="text"] {
+  width: 500px;
+  height: 20px;
+}
+
+input[placeholder="Type Question Here"] {
+  position: relative;
+  left: 13px;
+}
+
+h1 {
+  background: #673AB7;
+  padding: 50px;
+  color: white;
+  font-size: 3em;
 }

@@ -40,13 +40,17 @@ class DeleteQ extends Component {
             console.log('Request status code: ', response.statusText, response.status, response.type);
             return response.json();
         });
+    this.fetchData();
   }
   // TODO: after deleting re render the contents
   componentDidMount() {
-    let that = this;
     console.log("Delete Q 'did mount'");
-    // Always use fetch with full error handling to
-    // at least aid debugging.
+    this.fetchData();
+  }
+  fetchData() {
+    let that = this;
+
+
     fetch('/allQs').then(function(response) {
       if (response.ok) {
         return response.json();

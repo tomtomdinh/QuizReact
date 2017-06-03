@@ -7,7 +7,7 @@ function ChoiceLine(props) {
   return <div >
     <label>{numAlpha[props.i]}.
     </label>
-    <input type="text" placeholder="Insert Choice Here" value={props.choice} onChange={props.choiceHandler}/>
+    <input type="text" placeholder="Type Choice Here" value={props.choice} onChange={props.choiceHandler}/>
     <input type="radio" name="Choices" onChange={props.answerHandler}/>
     <label>
       Is answer?</label>
@@ -15,6 +15,7 @@ function ChoiceLine(props) {
 }
 
 class AddQ extends Component {
+
   constructor(props) {
     super(props);
     /* Set up state here */
@@ -25,6 +26,12 @@ class AddQ extends Component {
       ],
       answer: 0
     };
+
+    this.defaultState = this.state
+  }
+
+  resetState() {
+    this.setState(this.defaultState);
   }
 
   addChoice() {
@@ -70,6 +77,8 @@ submitQ() {
           console.log('Request status code: ', response.statusText, response.status, response.type);
           return response.json();
       });
+
+      this.resetState();
 }
 
   render() {
@@ -86,7 +95,8 @@ submitQ() {
     return <div>
       <h2>New Question</h2>
       {buttonBar}
-      <input type="text" placeholder="Insert Question Here" value={this.state.question} onChange={this.questionHandler.bind(this)}/> {choiceElements}
+      <input type="text" placeholder="Type Question Here" value={this.state.question} onChange={this.questionHandler.bind(this)}/>
+      {choiceElements}
     </div>;
   }
 }
